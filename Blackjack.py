@@ -74,6 +74,8 @@ def take_bet(chips):
 			chips.bet = int(input('How much do you bet? '))
 		except ValueError:
 			print("The bet needs to be an integer")
+		if(chips.bet <= 0):
+			chips.bet = input('Bet needs to be above zero. Press enter to continue ')
 		else:
 			if chips.bet > chips.total:
 				print("You can only bet up to {} chips!".format(chips.total))
